@@ -1,0 +1,13 @@
+{
+    "name": "friendsoforo/oro-recaptcha-bundle",
+    "license": "MIT",
+    "description": "Oro Bundle to inject ReCAPTCHA into public forms",
+    "type": "project",
+    "require": {
+        "oro/platform": "3.*",
+        "excelwebzone/recaptcha-bundle": "^1.5"
+    },
+    "autoload": {
+        "psr-4": { "HackOro\\RecaptchaBundle\\": "./src/" }
+    }
+}

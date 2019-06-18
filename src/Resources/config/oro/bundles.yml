@@ -1,0 +1,3 @@
+bundles:
+  - { name: EWZ\Bundle\RecaptchaBundle\EWZRecaptchaBundle, priority: 40 }
+  - { name: HackOro\RecaptchaBundle\HackOroRecaptchaBundle, priority: 50 }

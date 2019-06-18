@@ -1,0 +1,64 @@
+system_configuration:
+    groups:
+        hack_oro:
+            title: 'hack_oro.label'
+        hack_oro_recaptcha:
+            icon: 'fa-id-card'
+            title: 'hack_oro.frontend.recaptcha.label'
+        recaptcha:
+            title: 'hack_oro.frontend.recaptcha.configuration.label'
+        protected_features:
+            title: 'hack_oro.frontend.recaptcha.protected_features_group.label'
+    fields:
+        hack_oro_recaptcha.theme:
+            data_type: string
+            type: Symfony\Component\Form\Extension\Core\Type\ChoiceType
+            options:
+                label: 'hack_oro.frontend.recaptcha.theme.label'
+                choices:
+                    Light: light
+                    Dark: dark
+                required: true
+                constraints:
+                    - NotBlank: ~
+        hack_oro_recaptcha.size:
+            data_type: string
+            type: Symfony\Component\Form\Extension\Core\Type\ChoiceType
+            options:
+                label: 'hack_oro.frontend.recaptcha.size.label'
+                choices:
+                    Normal: normal
+                    Compact: compact
+                required: true
+                constraints:
+                    - NotBlank: ~
+        hack_oro_recaptcha.protect_registration:
+            data_type: boolean
+            type: Oro\Bundle\ConfigBundle\Form\Type\ConfigCheckbox
+            options:
+                label: 'hack_oro.frontend.recaptcha.protect_registration.label'
+                required: false
+                resettable: false
+        hack_oro_recaptcha.protect_contact_form:
+            data_type: boolean
+            type: Oro\Bundle\ConfigBundle\Form\Type\ConfigCheckbox
+            options:
+                label: 'hack_oro.frontend.recaptcha.protect_contact_form.label'
+                required: false
+                resettable: false
+    tree:
+        system_configuration:
+            platform:
+                children:
+                    integrations:
+                        children:
+                            hack_oro_recaptcha:
+                                children:
+                                    recaptcha:
+                                        children:
+                                            - hack_oro_recaptcha.theme
+                                            - hack_oro_recaptcha.size
+                                    protected_features:
+                                        children:
+                                            - hack_oro_recaptcha.protect_registration
+                                            - hack_oro_recaptcha.protect_contact_form

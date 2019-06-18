@@ -1,0 +1,14 @@
+services:
+    hack_oro_recaptcha.form.contactus_form_type_extension:
+        class: HackOro\RecaptchaBundle\Form\Extension\ContactUsTypeExtension
+        calls:
+            - [setConfigManager, ['@oro_config.user']]
+        tags:
+            - { name: form.type_extension, extended_type: Oro\Bundle\ContactUsBundle\Form\Type\ContactRequestType }
+
+    hack_oro_recaptcha.form.registration_form_type_extension:
+        class: HackOro\RecaptchaBundle\Form\Extension\RegistrationTypeExtension
+        calls:
+            - [setConfigManager, ['@oro_config.user']]
+        tags:
+            - { name: form.type_extension, extended_type: Oro\Bundle\CustomerBundle\Form\Type\FrontendCustomerUserRegistrationType }

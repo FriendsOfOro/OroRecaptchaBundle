@@ -1,0 +1,12 @@
+hack_oro:
+  label: HackOro
+  frontend:
+    recaptcha:
+      label: ReCAPTCHA
+      configuration:
+        label: Configuration
+      theme.label: Theme
+      size.label: Size
+      protected_features_group.label: Protected Features
+      protect_registration.label: Protect Registration Form
+      protect_contact_form.label: Protect Contact Us Form
