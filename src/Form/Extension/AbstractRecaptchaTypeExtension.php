@@ -84,11 +84,4 @@ abstract class AbstractRecaptchaTypeExtension extends AbstractTypeExtension
      */
     abstract public function isProtected();
 
-    /**
-     * Returns the name of the type being extended.
-     *
-     * @return string The name of the type being extended
-     */
-    abstract public function getExtendedType();
-
 }

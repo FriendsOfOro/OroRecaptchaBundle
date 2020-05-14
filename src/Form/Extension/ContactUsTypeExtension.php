@@ -27,4 +27,12 @@ class ContactUsTypeExtension extends AbstractRecaptchaTypeExtension
     {
         return $this->getConfiguration(Configuration::PROTECT_CONTACT_FORM, false);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getExtendedTypes(): iterable
+    {
+        return [ContactRequestType::class];
+    }
 }

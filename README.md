@@ -10,7 +10,15 @@ Extends the Symfony [EWZRecaptchaBundle by excelwebzone](https://github.com/exce
 
 Requirements
 -------------------
-* Oro Platform 3.X
+This bundle supports the following Oro Platform versions:
+
+* Oro Platform v3.x
+  - Support for this version is on the "v3.x" branch
+  
+* Oro Platform v4.1.x
+  - Support for this version is on the "v4.1.x" branch
+  
+The Master branch will always track support for the latest released Oro Platform version.
 
 Installation and Usage
 -------------------
@@ -27,8 +35,19 @@ Installation and Usage
     ewz_recaptcha:
         public_key:  here_is_your_public_key
         private_key: here_is_your_private_key
+   
         # Not needed as "%kernel.default_locale%" is the default value for the locale key
-        locale_key:  %kernel.default_locale%
+        # locale_key:  %kernel.default_locale%
+   
+        # etc. Refer to the ewz_recaptcha package for more information.
+   
+    # optional, modify key values if you need to override this bundle's default settings 
+    hack_oro_recaptcha:
+        settings:
+            #theme: light
+            #size: normal
+            #protect_registration: true
+            #protect_contact_form: true
     ```
 1. Purge Oro cache:
     ```bash

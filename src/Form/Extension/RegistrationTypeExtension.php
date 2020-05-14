@@ -27,4 +27,13 @@ class RegistrationTypeExtension extends AbstractRecaptchaTypeExtension
     {
         return $this->getConfiguration(Configuration::PROTECT_REGISTRATION, false);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getExtendedTypes(): iterable
+    {
+        return [FrontendCustomerUserRegistrationType::class];
+    }
+
 }
