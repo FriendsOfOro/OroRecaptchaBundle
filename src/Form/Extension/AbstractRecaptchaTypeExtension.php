@@ -74,9 +74,9 @@ abstract class AbstractRecaptchaTypeExtension extends AbstractTypeExtension
      * @param $default
      * @return mixed
      */
-    protected function getConfiguration(string $key, $default)
+    protected function getConfiguration(string $key, $default = null)
     {
-        return $this->configManager->get(Configuration::getConfigKeyByName($key), $default);
+        return $this->configManager->get(Configuration::getConfigKeyByName($key)) ?? $default;
     }
 
     /**
