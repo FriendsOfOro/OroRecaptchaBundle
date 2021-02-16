@@ -17,7 +17,10 @@ This bundle supports the following Oro Platform versions:
   
 * Oro Platform v4.1.x
   - Support for this version is on the "v4.1.x" branch
-  
+
+* Oro Platform v4.2.x
+    - Support for this version is on the "v4.2.x" branch
+
 The Master branch will always track support for the latest released Oro Platform version.
 
 Installation and Usage
