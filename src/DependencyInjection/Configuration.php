@@ -30,8 +30,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root(HackOroRecaptchaExtension::ALIAS);
+        $treeBuilder = new TreeBuilder(HackOroRecaptchaExtension::ALIAS);
+        $rootNode = $treeBuilder->getRootNode();
 
         SettingsBuilder::append(
             $rootNode,
