@@ -46,14 +46,6 @@ Installation and Usage
         # locale_key:  %kernel.default_locale%
    
         # etc. Refer to the ewz_recaptcha package for more information.
-   
-    # optional, modify key values if you need to override this bundle's default settings 
-    hack_oro_recaptcha:
-        settings:
-            #theme: light
-            #size: normal
-            #protect_registration: true
-            #protect_contact_form: true
     ```
 1. Purge Oro cache:
     ```bash
