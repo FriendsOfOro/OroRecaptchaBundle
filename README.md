@@ -21,6 +21,9 @@ This bundle supports the following Oro Platform versions:
 * Oro Platform v4.2.x
     - Support for this version is on the "v4.2.x" branch
 
+* Oro Platform v5.x
+    - Support for this version is on the "v5.x" branch
+
 The Master branch will always track support for the latest released Oro Platform version.
 
 Installation and Usage
@@ -43,14 +46,6 @@ Installation and Usage
         # locale_key:  %kernel.default_locale%
    
         # etc. Refer to the ewz_recaptcha package for more information.
-   
-    # optional, modify key values if you need to override this bundle's default settings 
-    hack_oro_recaptcha:
-        settings:
-            #theme: light
-            #size: normal
-            #protect_registration: true
-            #protect_contact_form: true
     ```
 1. Purge Oro cache:
     ```bash

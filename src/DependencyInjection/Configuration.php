@@ -30,8 +30,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root(HackOroRecaptchaExtension::ALIAS);
+        $treeBuilder = new TreeBuilder(HackOroRecaptchaExtension::ALIAS);
+        $rootNode = $treeBuilder->getRootNode();
 
         SettingsBuilder::append(
             $rootNode,
@@ -47,12 +47,15 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder;
     }
 
-    /**
-     * @param string $key
-     * @return string
-     */
-    public static function getConfigKeyByName($key)
+
+   /**
+         * Returns full key name by it's last part
+         *
+         * @param $name string last part of the key name (one of the class cons can be used)
+         * @return string full config path key
+         */
+        public static function getConfigKeyByName($name)
     {
-        return implode(ConfigManager::SECTION_MODEL_SEPARATOR, [HackOroRecaptchaExtension::ALIAS, $key]);
+        return HackOroRecaptchaExtension::ALIAS . ConfigManager::SECTION_MODEL_SEPARATOR . $name;
     }
 }
