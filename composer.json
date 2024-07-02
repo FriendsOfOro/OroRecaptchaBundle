@@ -4,7 +4,7 @@
     "description": "Oro Bundle to inject ReCAPTCHA into public forms",
     "type": "project",
     "require": {
-        "oro/platform": "5.1.*",
+        "oro/platform": "6.0.*",
         "excelwebzone/recaptcha-bundle": "^1.5"
     },
     "autoload": {

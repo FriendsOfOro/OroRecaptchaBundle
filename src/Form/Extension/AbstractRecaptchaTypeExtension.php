@@ -21,13 +21,11 @@ abstract class AbstractRecaptchaTypeExtension extends AbstractTypeExtension
     const DEFAULT_THEME = 'light';
     const DEFAULT_SIZE = 'normal';
 
-    /** @var ConfigManager */
-    protected $configManager;
+    protected ConfigManager $configManager;
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if ($this->isProtected()) {
-
             $builder->add('recaptcha', EWZRecaptchaType::class, [
                 'attr' => [
                     'options' => [
@@ -44,44 +42,28 @@ abstract class AbstractRecaptchaTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * @param ConfigManager $configManager
-     */
-    public function setConfigManager(ConfigManager $configManager)
+    public function setConfigManager(ConfigManager $configManager): void
     {
         $this->configManager = $configManager;
     }
 
-    /**
-     * @return mixed
-     */
-    protected function getTheme()
+    protected function getTheme(): mixed
     {
         return $this->getConfiguration(Configuration::THEME, self::DEFAULT_THEME);
     }
 
-    /**
-     * @return mixed
-     */
-    protected function getSize()
+    protected function getSize(): mixed
     {
         return $this->getConfiguration(Configuration::SIZE, self::DEFAULT_SIZE);
     }
 
     /**
      * Get configuration option
-     * @param string $key
-     * @param $default
-     * @return mixed
      */
-    protected function getConfiguration(string $key, $default = null)
+    protected function getConfiguration(string $key, mixed $default = null): mixed
     {
         return $this->configManager->get(Configuration::getConfigKeyByName($key)) ?? $default;
     }
 
-    /**
-     * @return boolean
-     */
-    abstract public function isProtected();
-
+    abstract public function isProtected(): bool;
 }

@@ -14,16 +14,15 @@ use Oro\Bundle\ContactUsBundle\Form\Type\ContactRequestType;
 
 class ContactUsTypeExtension extends AbstractRecaptchaTypeExtension
 {
-    public function getExtendedType()
+    public function getExtendedType(): string
     {
         return ContactRequestType::class;
     }
 
     /**
      * Protect the Contact Us Form?
-     * @return boolean
      */
-    public function isProtected()
+    public function isProtected(): bool
     {
         return $this->getConfiguration(Configuration::PROTECT_CONTACT_FORM, false);
     }
