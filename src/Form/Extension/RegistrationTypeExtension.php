@@ -14,16 +14,15 @@ use Oro\Bundle\CustomerBundle\Form\Type\FrontendCustomerUserRegistrationType;
 
 class RegistrationTypeExtension extends AbstractRecaptchaTypeExtension
 {
-    public function getExtendedType()
+    public function getExtendedType(): string
     {
         return FrontendCustomerUserRegistrationType::class;
     }
 
     /**
      * Protect the Registration Form?
-     * @return boolean
      */
-    public function isProtected()
+    public function isProtected(): bool
     {
         return $this->getConfiguration(Configuration::PROTECT_REGISTRATION, false);
     }
@@ -35,5 +34,4 @@ class RegistrationTypeExtension extends AbstractRecaptchaTypeExtension
     {
         return [FrontendCustomerUserRegistrationType::class];
     }
-
 }
